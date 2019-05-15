@@ -1,0 +1,19 @@
+{
+  "name": "alg",
+  "version": "1.0.0",
+  "description": "algrithm tests",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/lodash": "^4.14.126",
+    "ts-node": "^8.1.0",
+    "typescript": "^3.4.5"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11"
+  }
+}
