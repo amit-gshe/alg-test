@@ -1,24 +1,20 @@
 
-const dir = [[-1, 0, 1], [-1, 0, 1]]
 function wordPuzzleGameProblem(array: string[][]) {
     for (let x = 0; x < array.length; x++) {
         for (let y = 0; y < array[x].length; y++) {
             let start = array[y][x]
-            for (let xdir = -1; xdir <= 1; xdir++) {
-                for (let ydir = -1; ydir <= 1; ydir++) {
-                    if(xdir==0 && ydir==0) {
+            for (let xDir = -1; xDir <= 1; xDir++) {
+                for (let yDir = -1; yDir <= 1; yDir++) {
+                    if (xDir == 0 && yDir == 0) {
                         continue
                     }
                     let word = start
                     for (let length = 1; ; length++) {
-                        let newY = y + length * ydir
-                        let newX = x + length * xdir
-                        console.log(`(${y},${x}), ${length},(${ydir},${xdir}),(${newY},${newX}),`)
+                        let newY = y + length * yDir
+                        let newX = x + length * xDir
                         if (array[newY] && array[newY][newX]) {
-                            if (newX !== x && newY != y) {
-                                word += array[y + length * ydir][x + length * xdir]
-                                console.log(word)
-                            }
+                            word += array[y + length * yDir][x + length * xDir]
+                            console.log(`(${x},${y}), (${xDir},${yDir}), ${length}, (${newX}, ${newY}), ${word}`)
                         } else {
                             break
                         }
