@@ -1,3 +1,3 @@
-import { main } from "./word_puzzle";
+import { main } from "./print_digits";
 
 main()
