@@ -5,21 +5,21 @@ function parseInclude(filename: string): string {
     let parsedContent = ""
     const content = fs.readFileSync(INCLUDE_PATH + filename).toString()
     const lines = content.split("\n").map((line) => line.trim())
-    console.log(lines)
     for (const line of lines) {
-        const parsedLine = parseLine(line)
-        if (parsedLine.length > 0) {
+        if (line.trim().length > 0) {
+            const parsedLine = parseLine(line)
             parsedContent += (parsedLine + "\n")
         }
+
     }
     return parsedContent
 }
 
 function parseLine(line: string): string {
     if (line.startsWith("#include")) {
-        return parseInclude(line.replace("#include", "").replace(/\"/g, "").trim())
+        return parseInclude(line.replace("#include", "").replace(/\"/g, "").trim()).trim()
     } else {
-        return line
+        return line.trim()
     }
 }
 
