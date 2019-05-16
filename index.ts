@@ -1,3 +1,3 @@
-import { main } from "./print_digits";
+import { main } from "./parse_include";
 
 main()
